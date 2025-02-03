@@ -5,9 +5,10 @@ import pluginJs from '@eslint/js'
 import tseslint from 'typescript-eslint'
 import pluginVue from 'eslint-plugin-vue'
 import prettier from 'eslint-plugin-prettier/recommended'
-import vueConfigTypescript from '@vue/eslint-config-typescript'
 import vueConfigPrettier from '@vue/eslint-config-prettier'
 import vitest from '@vitest/eslint-plugin'
+import defineConfigWithVueTs from '@vitest/eslint-plugin/dist/defineConfigWithVueTs'
+import vueTsConfigs from '@vitest/eslint-plugin/dist/vueTsConfigs'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -48,7 +49,8 @@ export default [
   },
   {
     rules: {
-      ...vueConfigTypescript.rules,
+      ...vueTsConfigs,
+      ...defineConfigWithVueTs,
       ...vueConfigPrettier.rules,
       'prettier/prettier': [
         'warn',
