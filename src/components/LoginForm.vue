@@ -54,6 +54,7 @@ const onSubmit = handleSubmit(async (values) => {
           <provet-input
             v-model="email"
             label="Email"
+            aria-label="email"
             type="email"
             hide-required
             required
@@ -69,6 +70,7 @@ const onSubmit = handleSubmit(async (values) => {
             label="Password"
             :type="showPassword ? 'text' : 'password'"
             :name="LoginFields.PASSWORD"
+            aria-label="Password"
             expand
             hide-required
             required
@@ -89,8 +91,6 @@ const onSubmit = handleSubmit(async (values) => {
               />
             </provet-button>
           </provet-input>
-
-          <provet-tooltip id="password-tooltip"> Show / hide password </provet-tooltip>
 
           <provet-checkbox
             v-model="updates"
