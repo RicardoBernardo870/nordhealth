@@ -1,10 +1,5 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import { useAuthStore } from './stores/auth'
-import { storeToRefs } from 'pinia'
-
-const auth = useAuthStore()
-const { isAuthenticated } = storeToRefs(auth)
 </script>
 
 <template>
